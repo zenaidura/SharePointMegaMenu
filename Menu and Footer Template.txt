@@ -1,0 +1,167 @@
+Paste the below code into your masterpage
+
+<link rel=" stylesheet" href="/_catalogs/masterpage/TU/megamenu/megamenu.css" type="text/css" />
+
+                            <script type="text/html" id="node-template">//<![CDATA[
+                            <!-- ko ifnot: NodeUrl == "" -->
+                            <a class="" data-bind="attr: { href: NodeUrl, target: OpenInNewWindow }">
+                                <span data-bind="text: Title"></span><!-- ko if: subNodes.length > 0 --><div class="mega-menu-down-arrow"></div><!-- /ko -->
+                            </a>
+                            <!-- /ko -->
+                            
+
+                            //]]></script>
+                            <script type="text/html" id="sub-node-template">//<![CDATA[
+                            <!-- ko ifnot: ViewAllBar -->
+                            <li>
+                                <!-- ko template: {name: 'sub-node-template-anchor'} --><!-- /ko -->
+                            </li>
+                            <!-- /ko -->
+
+                            
+                            //]]></script>
+                            <script type="text/html" id="sub-node-template-anchor">//<![CDATA[
+                            <!-- ko ifnot: NodeUrl == "" -->
+                            <a class="" data-bind="attr: { href: NodeUrl, target: OpenInNewWindow }">
+                                <!-- ko if: subNodes.length > 0 -->
+                                <span class="mega-menu-group" data-bind="text: Title"></span>
+                                <!-- /ko -->
+                                <!-- ko if: subNodes.length == 0 -->
+                                <span data-bind="text: Title"></span>
+                                <!-- /ko -->
+                            </a>
+                            <ul class="mega-menu-sub-menu items" data-bind="foreach: subNodes">
+                                <li>
+                                    <a class="" data-bind="attr: { href: NodeUrl, target: OpenInNewWindow }">
+                                        <span data-bind="text: Title"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /ko -->
+                        
+                            
+                            //]]></script>
+                            <ul class="mega-menu" data-bind="foreach: MegaMenu">
+                                <li>
+                                    <span data-bind="template: {name: 'node-template'}">
+                                    </span>
+                                    <!-- ko if: subNodes.length > 0 -->
+                                    <div class="mega-menu-sub-div">
+                                        <ul class="mega-menu-sub-menu" data-bind="foreach: subNodes">
+                                            <!-- ko if: Column == 1 -->
+                                            <span data-bind="template: {name: 'sub-node-template'}">
+                                            </span>
+                                            <!-- /ko -->
+                                        </ul>
+                                        <ul class="mega-menu-sub-menu" data-bind="foreach: subNodes">
+                                            <!-- ko if: Column == 2 -->
+                                            <span data-bind="template: {name: 'sub-node-template'}">
+                                            </span>
+                                            <!-- /ko -->
+                                        </ul>
+                                        <ul class="mega-menu-sub-menu" data-bind="foreach: subNodes">
+                                            <!-- ko if: Column == 3 -->
+                                            <span data-bind="template: {name: 'sub-node-template'}">
+                                            </span>
+                                            <!-- /ko -->
+                                        </ul>
+                                    </div>
+                                    <!-- /ko -->
+                                </li>
+                            </ul>
+
+		
+		
+Footer
+
+                <!-- Footer -->
+                <div id="footerWrap" class=" ms-dialogHidden">
+                    <div id="footer" class="ms-dialogHidden s4-titlerowhidetitle">
+                        <div class="footerLinksArea">
+                            <ul class="footer-menu footer-menu-quick-links">
+                                <li class="TUQuickLinks">
+                                    <a class="">
+                                        <div>
+                                            Quick Links
+                                        
+                                        
+                                        
+                                        
+                                        </div>
+                                    </a>
+                                    <ul class="footer-sub-menu " data-bind="foreach: QuickLinks">
+                                        <li class="">
+                                            <a class="" data-bind="attr: { href: NodeUrl }">
+                                                <span data-bind="text: Title">
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="footer-menu footer-menu-quick-links">
+                                <li class="TUSites">
+                                    <a class="">
+                                        <div>
+                                            TransUnion Sites
+                                        
+                                        
+                                        
+                                        
+                                        </div>
+                                    </a>
+                                    <ul class="footer-sub-menu " data-bind="foreach: QuickLinks2">
+                                        <li class="">
+                                            <a class="" data-bind="attr: { href: NodeUrl }">
+                                                <span data-bind="text: Title">
+                                                </span>
+                                            </a>
+                                            <div class="footer-sub-menu-links" data-bind="foreach: subNodes">
+                                                <a class="" data-bind="attr: { href: NodeUrl, target: OpenInNewWindow }">
+                                                    <span data-bind="text: Title">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="footer-menu footer-menu-quick-links">
+                                <li class="TUWhoWeAre">
+                                    <a class="">
+                                        <div>
+                                            Who We Are
+                                        
+                                        
+                                        
+                                        
+                                        </div>
+                                    </a>
+                                    <ul class="footer-sub-menu " data-bind="foreach: QuickLinks3">
+                                        <li class="">
+                                            <a class="" data-bind="attr: { href: NodeUrl }">
+                                                <span data-bind="text: Title">
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <br class="ms-clear" />
+                        </div>
+                    </div>
+                    <div class="footerBottom">
+                        <div class="footerBWrap">
+                            <div class="left">
+                    	        © 2006 - 2014 TransUnion LLC. All rights reserved.
+                    	    
+                            
+                            
+                            
+                            </div>
+                            <div class="right">
+                                <img alt="TransUnion" src="/_catalogs/masterpage/TU/images/tu-logo-footer.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
